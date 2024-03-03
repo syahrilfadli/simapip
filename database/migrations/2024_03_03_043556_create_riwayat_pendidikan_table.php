@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('riwayat_pendidikan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pegawai_id');
-            $table->string('gelar_depan', 10);
-            $table->string('gelar_belakang', 10);
+            $table->unsignedBigInteger('ref_strata_pendidikan_id');
+            $table->string('gelar_depan', 10)->nullable();
+            $table->string('gelar_belakang', 10)->nullable();
             $table->string('nomor_ijazah', 30);
             $table->date('tanggal_ijazah');
             $table->string('file_ijazah', 250);
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->foreign('pegawai_id')->references('id')->on('pegawai');
+            $table->foreign('ref_strata_pendidikan_id')->references('id')->on('ref_strata_pendidikan');
         });
     }
 
