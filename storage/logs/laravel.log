@@ -3084,3 +3084,26 @@ Did you mean one of these?
 #34 D:\\Workspaces\\QAT\\simapip\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #35 {main}
 "} 
+[2024-03-03 05:26:30] local.ERROR: Command "run" is not defined.
+
+Did you mean one of these?
+    model:prune
+    queue:prune-batches
+    queue:prune-failed
+    sanctum:prune-expired
+    schedule:run {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"run\" is not defined.
+
+Did you mean one of these?
+    model:prune
+    queue:prune-batches
+    queue:prune-failed
+    sanctum:prune-expired
+    schedule:run at D:\\Workspaces\\QAT\\simapip\\vendor\\symfony\\console\\Application.php:694)
+[stacktrace]
+#0 D:\\Workspaces\\QAT\\simapip\\vendor\\symfony\\console\\Application.php(259): Symfony\\Component\\Console\\Application->find('run')
+#1 D:\\Workspaces\\QAT\\simapip\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 D:\\Workspaces\\QAT\\simapip\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 D:\\Workspaces\\QAT\\simapip\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 D:\\Workspaces\\QAT\\simapip\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
