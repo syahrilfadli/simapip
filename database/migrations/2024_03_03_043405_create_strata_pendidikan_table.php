@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('strata_pendidikan', function (Blueprint $table) {
+        Schema::create('ref_strata_pendidikan', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->integer('sort_level');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('strata_pendidikan');
+        Schema::dropIfExists('ref_strata_pendidikan');
     }
 };

@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('riwayat_pendidikan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pegawai_id');
-            $table->unsignedBigInteger('program_studi_id');
             $table->string('gelar_depan', 10);
             $table->string('gelar_belakang', 10);
             $table->string('nomor_ijazah', 30);
@@ -32,7 +31,6 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->foreign('pegawai_id')->references('id')->on('pegawai');
-            $table->foreign('program_studi_id')->references('id')->on('program_studi');
         });
     }
 
