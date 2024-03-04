@@ -1,14 +1,14 @@
 @include('Layout.Template.Header')
 			<!-- NFTmax Dashboard -->
 			<section class="nftmax-adashboard nftmax-show">
-			
+
 				<div class="container">
-					<div class="row">	
+					<div class="row">
 						<div class="col-lg-9 col-12 nftmax-main__column">
 							<div class="nftmax-body">
 								<!-- Dashboard Inner -->
 								<div class="nftmax-dsinner">
-									
+
 									<!-- NFTMax User Profile -->
 									<div class="nftmax-userprofile mg-top-40">
 										<div class="nftmax-userprofile__header">
@@ -24,7 +24,7 @@
 													<p class="nftmax-userprofile__info-text"> {{ $User['bio'] }} <a href="#">Read More</a></p>
 													<ul class="nftmax-userprofile__meta">
 														<li class="nftmax-userprofile__meta" data-bs-toggle="modal" data-bs-target="#followers_modal"><a href="#"><span class="nftmax-userprofile__number">{{ $User['followers'] }}</span> Followers</a></li>
-														
+
 														<!-- Preview Product -->
 														<div class="nftmax-preview__modal modal fade" id="followers_modal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true" >
 															<div class="modal-dialog  nftmax-followers__modal">
@@ -66,7 +66,7 @@
 																					</div>
 																				</div>
 																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
 																				</div>
 																			</li>
 																			<!-- End SIngle Follower -->
@@ -83,7 +83,7 @@
 																					</div>
 																				</div>
 																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
 																				</div>
 																			</li>
 																			<!-- End SIngle Follower -->
@@ -100,75 +100,7 @@
 																					</div>
 																				</div>
 																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
-																				</div>
-																			</li>
-																			<!-- End SIngle Follower -->
-																			<!-- SIngle Follower -->
-																			<li  class="followers-list__single">
-																				<div class="followers-list__first">
-																					<div class="followers-list__follower">
-																						<img src="/assets/img/follower.png" alt="#">
-																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
-																					</div>
-																					<div class="followers-list__content">
-																						<h4 class="followers-list__title">Guy Hawkins</h4>
-																						<p href="#" class="followers-list__text">34.k followers</p>
-																					</div>
-																				</div>
-																				<div class="followers-list__button">
-																					<a href="#" class="nftmax-btn nftmax-btn__bordered nftmax-btn__followed radius btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true"><span class="ntfmax__btn-textgr">Following</span></a>
-																				</div>
-																			</li>
-																			<!-- End SIngle Follower -->
-																			<!-- SIngle Follower -->
-																			<li  class="followers-list__single">
-																				<div class="followers-list__first">
-																					<div class="followers-list__follower">
-																						<img src="/assets/img/follower.png" alt="#">
-																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
-																					</div>
-																					<div class="followers-list__content">
-																						<h4 class="followers-list__title">Guy Hawkins</h4>
-																						<p href="#" class="followers-list__text">34.k followers</p>
-																					</div>
-																				</div>
-																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
-																				</div>
-																			</li>
-																			<!-- End SIngle Follower -->
-																			<!-- SIngle Follower -->
-																			<li  class="followers-list__single">
-																				<div class="followers-list__first">
-																					<div class="followers-list__follower">
-																						<img src="/assets/img/follower.png" alt="#">
-																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
-																					</div>
-																					<div class="followers-list__content">
-																						<h4 class="followers-list__title">Guy Hawkins</h4>
-																						<p href="#" class="followers-list__text">34.k followers</p>
-																					</div>
-																				</div>
-																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
-																				</div>
-																			</li>
-																			<!-- End SIngle Follower -->
-																			<!-- SIngle Follower -->
-																			<li  class="followers-list__single">
-																				<div class="followers-list__first">
-																					<div class="followers-list__follower">
-																						<img src="/assets/img/follower.png" alt="#">
-																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
-																					</div>
-																					<div class="followers-list__content">
-																						<h4 class="followers-list__title">Guy Hawkins</h4>
-																						<p href="#" class="followers-list__text">34.k followers</p>
-																					</div>
-																				</div>
-																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
 																				</div>
 																			</li>
 																			<!-- End SIngle Follower -->
@@ -202,7 +134,7 @@
 																					</div>
 																				</div>
 																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
 																				</div>
 																			</li>
 																			<!-- End SIngle Follower -->
@@ -219,7 +151,7 @@
 																					</div>
 																				</div>
 																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
 																				</div>
 																			</li>
 																			<!-- End SIngle Follower -->
@@ -236,7 +168,75 @@
 																					</div>
 																				</div>
 																				<div class="followers-list__button">
-																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a> 
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
+																				</div>
+																			</li>
+																			<!-- End SIngle Follower -->
+																			<!-- SIngle Follower -->
+																			<li  class="followers-list__single">
+																				<div class="followers-list__first">
+																					<div class="followers-list__follower">
+																						<img src="/assets/img/follower.png" alt="#">
+																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
+																					</div>
+																					<div class="followers-list__content">
+																						<h4 class="followers-list__title">Guy Hawkins</h4>
+																						<p href="#" class="followers-list__text">34.k followers</p>
+																					</div>
+																				</div>
+																				<div class="followers-list__button">
+																					<a href="#" class="nftmax-btn nftmax-btn__bordered nftmax-btn__followed radius btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true"><span class="ntfmax__btn-textgr">Following</span></a>
+																				</div>
+																			</li>
+																			<!-- End SIngle Follower -->
+																			<!-- SIngle Follower -->
+																			<li  class="followers-list__single">
+																				<div class="followers-list__first">
+																					<div class="followers-list__follower">
+																						<img src="/assets/img/follower.png" alt="#">
+																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
+																					</div>
+																					<div class="followers-list__content">
+																						<h4 class="followers-list__title">Guy Hawkins</h4>
+																						<p href="#" class="followers-list__text">34.k followers</p>
+																					</div>
+																				</div>
+																				<div class="followers-list__button">
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
+																				</div>
+																			</li>
+																			<!-- End SIngle Follower -->
+																			<!-- SIngle Follower -->
+																			<li  class="followers-list__single">
+																				<div class="followers-list__first">
+																					<div class="followers-list__follower">
+																						<img src="/assets/img/follower.png" alt="#">
+																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
+																					</div>
+																					<div class="followers-list__content">
+																						<h4 class="followers-list__title">Guy Hawkins</h4>
+																						<p href="#" class="followers-list__text">34.k followers</p>
+																					</div>
+																				</div>
+																				<div class="followers-list__button">
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
+																				</div>
+																			</li>
+																			<!-- End SIngle Follower -->
+																			<!-- SIngle Follower -->
+																			<li  class="followers-list__single">
+																				<div class="followers-list__first">
+																					<div class="followers-list__follower">
+																						<img src="/assets/img/follower.png" alt="#">
+																						<div class="followers-list__badge"><img src="/assets/img/badge.png" alt="#"></div>
+																					</div>
+																					<div class="followers-list__content">
+																						<h4 class="followers-list__title">Guy Hawkins</h4>
+																						<p href="#" class="followers-list__text">34.k followers</p>
+																					</div>
+																				</div>
+																				<div class="followers-list__button">
+																					<a class="nftmax-btn nftmax-btn__bordered bg radius">Follow</a>
 																				</div>
 																			</li>
 																			<!-- End SIngle Follower -->
@@ -257,9 +257,9 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<div class="nftmax-pcats">
-							
+
 										<!-- Profile Menu -->
 										<div class="nftmax-pcats__bar">
 											<div class="nftmax-pcats__list list-group " id="list-tab" role="tablist">
@@ -273,12 +273,12 @@
 											<a href="{{url('/template/upload-product')}}" class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered bg radius">Upload Product</a>
 										</div>
 										<!-- End Profile Menu -->
-										
-										
+
+
 										<div class="tab-content" id="nav-tabContent">
 											<!-- Single Tab -->
 											<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="nav-home-tab">
-												
+
 												<div class="row">
 													<div class="col-12">
 														<div class="nftmax-pptabs mg-btm-20">
@@ -295,10 +295,10 @@
 																	</li>
 																</ul>
 															</div>
-														</div>	
+														</div>
 													</div>
 												</div>
-												
+
 												<div class="row nftmax-gap-sq30">
 												@foreach($OnSale as $OnSale)
 															<div class="col-lg-4 col-md-6 col-12">
@@ -312,13 +312,13 @@
 																				</div>
 																				<div class="nftmax-trendmeta__content">
 																					<span class="nftmax-trendmeta__small">Owned by</span>
-																					<h4 class="nftmax-trendmeta__title">{{ $OnSale['1'] }}</h4> 
+																					<h4 class="nftmax-trendmeta__title">{{ $OnSale['1'] }}</h4>
 																				</div>
 																			</div>
 																			<div class="nftmax-trendmeta__author">
 																				<div class="nftmax-trendmeta__content">
 																					<span class="nftmax-trendmeta__small">Create by</span>
-																					<h4 class="nftmax-trendmeta__title">{{ $OnSale['2'] }}</h4> 
+																					<h4 class="nftmax-trendmeta__title">{{ $OnSale['2'] }}</h4>
 																				</div>
 																				<div class="nftmax-trendmeta__img">
 																					<img src="{{ asset($OnSale['3']) }}" alt="#">
@@ -359,7 +359,7 @@
 															@endforeach
 												</div>
 											</div>
-										
+
 											<div class="tab-pane fade" id="tab_2" role="tabpanel" aria-labelledby="nav-home-tab">
 												<div class="row">
 													<div class="col-12">
@@ -377,7 +377,7 @@
 																	</li>
 																</ul>
 															</div>
-														</div>	
+														</div>
 													</div>
 												</div>
 												<div class="row nftmax-gap-sq30 trending-action__actives">
@@ -421,13 +421,13 @@
 																<a href="marketplace.html" class="nftmax-btn trs-white">View Atwork</a>
 															</div>
 														</div>
-														
+
 														<!-- End Treadning Single -->
 													</div>
 													@endforeach
 												</div>
 											</div>
-											
+
 											<div class="tab-pane fade" id="tab_3" role="tabpanel" aria-labelledby="nav-home-tab">
 												<div class="row">
 													<div class="col-12">
@@ -445,7 +445,7 @@
 																	</li>
 																</ul>
 															</div>
-														</div>	
+														</div>
 													</div>
 												</div>
 												<div class="nftmax-inner__heading nftmax-pp__title mt-0">
@@ -465,13 +465,13 @@
 																		</div>
 																		<div class="nftmax-trendmeta__content">
 																			<span class="nftmax-trendmeta__small">Owned by</span>
-																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[1]}}</h4> 
+																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[1]}}</h4>
 																		</div>
 																	</div>
 																	<div class="nftmax-trendmeta__author">
 																		<div class="nftmax-trendmeta__content">
 																			<span class="nftmax-trendmeta__small">Create by</span>
-																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[2]}}</h4> 
+																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[2]}}</h4>
 																		</div>
 																		<div class="nftmax-trendmeta__img">
 																			<img src="{{ asset($CreateforBits['3']) }}" alt="#">
@@ -507,11 +507,11 @@
 													</div>
 													@endforeach
 												</div>
-												
+
 												<div class="nftmax-inner__heading nftmax-pp__title">
 													<h2 class="nftmax-inner__page-title">Create for Bits</h2>
 												</div>
-												
+
 												<div class="row nftmax-gap-sq30  trending-action__actives">
 													@foreach($CreateforSell as $CreateforSell)
 													<div class="col-xxl-3 col-lg-3 col-md-6 col-12">
@@ -558,7 +558,7 @@
 													@endforeach
 												</div>
 											</div>
-											
+
 											<div class="tab-pane fade" id="tab_4" role="tabpanel" aria-labelledby="nav-home-tab">
 												<div class="row">
 													<div class="col-12">
@@ -576,7 +576,7 @@
 																	</li>
 																</ul>
 															</div>
-														</div>	
+														</div>
 													</div>
 												</div>
 												<div class="nftmax-inner__heading nftmax-pp__title mt-0">
@@ -596,13 +596,13 @@
 																		</div>
 																		<div class="nftmax-trendmeta__content">
 																			<span class="nftmax-trendmeta__small">Owned by</span>
-																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[1]}}</h4> 
+																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[1]}}</h4>
 																		</div>
 																	</div>
 																	<div class="nftmax-trendmeta__author">
 																		<div class="nftmax-trendmeta__content">
 																			<span class="nftmax-trendmeta__small">Create by</span>
-																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[2]}}</h4> 
+																			<h4 class="nftmax-trendmeta__title">{{$CreateforBits[2]}}</h4>
 																		</div>
 																		<div class="nftmax-trendmeta__img">
 																			<img src="{{ asset($CreateforBits['3']) }}" alt="#">
@@ -638,11 +638,11 @@
 													</div>
 													@endforeach
 												</div>
-												
+
 												<div class="nftmax-inner__heading nftmax-pp__title">
 													<h2 class="nftmax-inner__page-title">Create for Bits</h2>
 												</div>
-												
+
 												<div class="row nftmax-gap-sq30  trending-action__actives">
 													@foreach($CreateforSellHidden as $CreateforSell)
 													<div class="col-xxl-3 col-lg-3 col-md-6 col-12">
@@ -689,7 +689,7 @@
 													@endforeach
 												</div>
 											</div>
-											
+
 											<div class="tab-pane fade" id="tab_5" role="tabpanel" aria-labelledby="nav-home-tab">
 												<div class="row">
 													<div class="col-12">
@@ -707,7 +707,7 @@
 																	</li>
 																</ul>
 															</div>
-														</div>	
+														</div>
 													</div>
 												</div>
 												<div class="row nftmax-gap-sq30">
@@ -741,7 +741,7 @@
 												@endforeach
 												</div>
 											</div>
-											
+
 											<div class="tab-pane fade" id="tab_6" role="tabpanel" aria-labelledby="nav-home-tab">
 												<div class="row">
 													<div class="col-12">
@@ -752,7 +752,7 @@
 																	<input name="s" value="" type="text" placeholder="Search items, collections...">
 																</form>
 															</div>
-														</div>	
+														</div>
 													</div>
 												</div>
 												<div class="nftmax-table">
@@ -815,22 +815,22 @@
 																	<p class="nftmax-table__time">{{$Activity['7']}}</p>
 																</td>
 															</tr>
-															@endforeach	
+															@endforeach
 														</tbody>
 														<!-- End NFTMax Table Body -->
 													</table>
 													<!-- End NFTMax Table -->
 												</div>
 											</div>
-											
+
 										</div>
-										
-									
+
+
 									</div>
-									
+
 								</div>
 								<!-- End Dashboard Inner -->
 							</div>
 						</div>
 @include('Layout.Template.RightSidebar')
-@include('Layout.Template.Footer')                       
+@include('Layout.Template.Footer')

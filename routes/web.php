@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     AuthController as Auth,
     DashboardController as Dashboard,
-    DataPegawaiController as DataPegawai
+    DataPegawaiController as DataPegawai,
+    PenugasanController
 };
 
 /*
@@ -30,4 +31,9 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::get('/list', [DataPegawai::class, 'listPegawai'])->name('list');
         Route::get('/{id}/profile', [DataPegawai::class, 'profilePegawai'])->name('profile');
     })->name('pegawai');
+
+    Route::group(['prefix' => 'penugasan', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [PenugasanController::class, 'index'])->name('index');
+    })->name('penugasan');
+
 })->name("simapip");

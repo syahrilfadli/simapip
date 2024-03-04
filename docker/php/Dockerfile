@@ -26,6 +26,7 @@ RUN apt-get update \
         unzip \
         zip \
         nodejs \
+        libgmp-dev \
     && apt-get clean \
     && pecl install redis \
     && docker-php-ext-configure gd \
@@ -41,6 +42,12 @@ RUN apt-get update \
         zip \
     && docker-php-ext-enable redis \
     && rm -rf /var/lib/apt/lists/*;
+
+RUN docker-php-ext-install \
+    bcmath \
+    gmp
+
+RUN docker-php-ext-enable gmp bcmath
 
 COPY ./docker/php/laravel.ini /usr/local/etc/php/conf.d/laravel.ini
 

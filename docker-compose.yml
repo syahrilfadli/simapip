@@ -41,7 +41,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: blog
+      MYSQL_DATABASE: simapip
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
       MYSQL_PASSWORD: root
