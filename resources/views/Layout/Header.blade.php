@@ -7,13 +7,13 @@
 		<meta name="keywords" content="Site keywords here">
 		<meta name="description" content="#">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
+
 		<!-- Site Title -->
 		<title>SIMAPIP Terintegrasi</title>
-		
+
 		<!-- Fav Icon -->
 		<link rel="icon" href="assets/img/favicon.png">
-		
+
 
 		<!-- NFTMax Stylesheet -->
 		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -23,12 +23,13 @@
 		<link rel="stylesheet" href="{{asset('assets/css/reset.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/style.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/custom.css')}}">
-		
+
+        @vite(['resources/js/app.js'])
 	</head>
 	<body>
-	
+
 		<div class="body-bg" style="background-image:url('assets/img/body-bg.jpg')">
-		
+
 			<!-- NFTMax Admin Menu -->
 			<div class="nftmax-smenu">
 				<!-- Admin Menu -->
@@ -53,12 +54,12 @@
 								<li><a href="{{url('/all-saved')}}"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v7"><svg class="nftmax-svg-icon" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg"><path d="M3.79296 0C4.44956 0.010169 5.09184 0.192671 5.65493 0.529075C6.21803 0.86548 6.682 1.34387 7 1.91595C7.318 1.34387 7.78197 0.86548 8.34507 0.529075C8.90816 0.192671 9.55044 0.010169 10.207 0C11.2537 0.0452807 12.2399 0.501197 12.9501 1.26814C13.6602 2.03509 14.0367 3.05073 13.9972 4.09316C13.9972 8.02666 7.60875 12.5698 7.33703 12.7625L7 13L6.66297 12.7625C6.39125 12.5709 0.00282288 8.02666 0.00282288 4.09316C-0.0366831 3.05073 0.339771 2.03509 1.04994 1.26814C1.76011 0.501197 2.74626 0.0452807 3.79296 0Z"></path></svg></span><span class="menu-bar__name">Penugasan Saya</span><span class="menu-bar__count ntfmax__bgc--7">{{ $SidebarInf['saved'] }}</span></span></a></li>
 								<li><a href="{{ url('/message') }}"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v8"><svg class="nftmax-svg-icon"  viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg"><path d="M13.9729 3L9.06236 7.82172C7.92242 8.93841 6.07703 8.93841 4.93709 7.82172L0.0267964 3C0.0185934 3.09048 0 3.17238 0 3.26232V10.1359C0.00191403 11.7168 1.30673 12.9981 2.9167 13H11.0833C12.6933 12.9981 13.9981 11.7168 14 10.1359V3.26232C13.9997 3.17238 13.9811 3.09048 13.9729 3Z"></path><path d="M8.31954 6.50593L14 1.35845C13.4403 0.517707 12.4369 0.00264136 11.353 0H2.64666C1.5631 0.00264136 0.559417 0.517707 0 1.35845L5.68046 6.50593C6.40983 7.16469 7.58988 7.16469 8.31954 6.50593Z"></path></svg></span><span class="menu-bar__name">Pelaporan</span></span></a></li>
 								<li><a href="{{url('/history')}}"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v9"><svg class="nftmax-svg-icon"  viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="M9.37855 15.6715C10.5752 15.6715 11.745 15.3166 12.74 14.6518C13.7349 13.987 14.5104 13.042 14.9684 11.9365C15.4263 10.8309 15.5461 9.61436 15.3127 8.4407C15.0792 7.26704 14.503 6.18896 13.6568 5.3428C12.8107 4.49664 11.7326 3.92039 10.5589 3.68694C9.38526 3.45348 8.16873 3.5733 7.06316 4.03124C5.9576 4.48918 5.01266 5.26467 4.34783 6.25966C3.683 7.25464 3.32816 8.42442 3.32816 9.62107C3.33057 11.225 3.9688 12.7625 5.10295 13.8967C6.23709 15.0308 7.77463 15.669 9.37855 15.6715ZM8.70628 7.60428C8.70628 7.42598 8.77711 7.25499 8.90318 7.12891C9.02926 7.00284 9.20025 6.93201 9.37855 6.93201C9.55684 6.93201 9.72784 7.00284 9.85391 7.12891C9.97999 7.25499 10.0508 7.42598 10.0508 7.60428V9.33872L11.2811 10.569C11.4068 10.6957 11.4772 10.8672 11.4768 11.0457C11.4765 11.2243 11.4054 11.3954 11.2791 11.5216C11.1529 11.6479 10.9817 11.719 10.8032 11.7193C10.6246 11.7197 10.4532 11.6493 10.3264 11.5236L8.90124 10.0984C8.7779 9.96987 8.70818 9.79918 8.70628 9.62107V7.60428Z"></path><path d="M9.37854 0.209365C9.20024 0.209365 9.02925 0.280193 8.90317 0.406267C8.7771 0.532342 8.70627 0.703335 8.70627 0.881631C8.70627 1.05993 8.7771 1.23092 8.90317 1.35699C9.02925 1.48307 9.20024 1.5539 9.37854 1.5539C11.2605 1.54612 13.0865 2.19384 14.5428 3.38583C15.9992 4.57782 16.9951 6.23969 17.3595 8.08605C17.7239 9.93241 17.4341 11.848 16.5398 13.504C15.6455 15.1599 14.2026 16.4528 12.4588 17.1606C10.715 17.8685 8.77918 17.9471 6.98374 17.3829C5.1883 16.8188 3.64531 15.6471 2.61973 14.0691C1.59415 12.4911 1.15 10.6053 1.36354 8.73548C1.57707 6.86565 2.43498 5.12852 3.78993 3.82239L3.74435 4.17009C3.72117 4.3469 3.76918 4.52568 3.87782 4.6671C3.98646 4.80852 4.14682 4.90099 4.32364 4.92417C4.50045 4.94734 4.67924 4.89933 4.82065 4.7907C4.96207 4.68206 5.05454 4.52169 5.07772 4.34487L5.33936 2.34515C5.35537 2.16962 5.30457 1.99451 5.19711 1.8548C5.08964 1.71508 4.93343 1.62105 4.75967 1.59148L2.75995 1.33003C2.6712 1.31592 2.58053 1.31974 2.49328 1.34127C2.40604 1.3628 2.324 1.40161 2.25201 1.45539C2.18002 1.50917 2.11954 1.57684 2.07415 1.6544C2.02876 1.73195 1.99938 1.81782 1.98775 1.90693C1.97612 1.99603 1.98247 2.08657 2.00643 2.17318C2.03038 2.25979 2.07146 2.34071 2.12723 2.41118C2.183 2.48164 2.25233 2.5402 2.33112 2.58341C2.40991 2.62662 2.49657 2.65359 2.58597 2.66273L3.00459 2.71759C1.3997 4.20681 0.365311 6.20977 0.0800858 8.38051C-0.20514 10.5512 0.27671 12.7534 1.44241 14.6067C2.6081 16.46 4.38444 17.8479 6.4646 18.5308C8.54476 19.2138 10.7981 19.1487 12.8354 18.347C14.8728 17.5453 16.5661 16.0573 17.623 14.1399C18.6799 12.2225 19.034 9.99617 18.6241 7.84549C18.2142 5.69482 17.0661 3.75482 15.378 2.3606C13.6899 0.966386 11.5679 0.205498 9.37854 0.209365Z"></path></svg></span><span class="menu-bar__name">Riwayat Penugasan</span></span></a></li>
-								
+
 							</ul>
 						</div>
 						<!-- End Nav Menu -->
 					</div>
-					
+
 					<div class="admin-menu__two mg-top-50">
 						<h4 class="admin-menu__title nftmax-scolor">Settings</h4>
 						<!-- Nav Menu -->
@@ -70,7 +71,7 @@
 						</div>
 						<!-- End Nav Menu -->
 					</div>
-					
+
 					<!-- Logout Button -->
 					<div class="logout-button">
 						<a class="nftmax-btn primary" data-bs-toggle="modal" data-bs-target="#logout_modal"><div class="logo-button__icon"><img src="assets/img/logout.png" alt="#"></div><span class="menu-bar__name">Signout</span></a>
@@ -79,7 +80,7 @@
 				<!-- End Admin Menu -->
 			</div>
 			<!-- End NFTMax Admin Menu -->
-			
+
 			<!-- Logout Modal  -->
 			<div class="nftmax-preview__modal modal fade" id="logout_modal" tabindex="-1" aria-labelledby="logoutmodal" aria-hidden="true" >
 				<div class="modal-dialog modal-dialog-centered nftmax-close__modal-close">
@@ -93,8 +94,8 @@
 								<div class="nftmax-preview__close-img"><img src="assets/img/close.png" alt="#"></div>
 								<h2 class="nftmax-preview__close-title">Lanjutkan untuk logout dari <span>SIMAPIP?</span></h2>
 								<div class="nftmax__item-button--group">
-									<a href="{{ url('/logout') }}" class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered bg radius " type="submit">Yes Logout 
-									</a>																
+									<a href="{{ url('/logout') }}" class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered bg radius " type="submit">Yes Logout
+									</a>
 									<button class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered--plus radius" data-bs-dismiss="modal"><span class="ntfmax__btn-textgr">Not Now</span> </button>
 								</div>
 							</div>
@@ -103,7 +104,7 @@
 				</div>
 			</div>
 			<!-- End Logout Modal -->
-			
+
 			<!-- Connect to Wallet -->
 			<div class="nftmax-preview__modal modal fade" id="add_wallet" tabindex="-1" aria-labelledby="addWalletlLabel" aria-hidden="true" >
 				<div class="modal-dialog modal-dialog-centered nftmax-followers__modal">
@@ -136,7 +137,7 @@
 				</div>
 			</div>
 			<!-- End Connect to Wallet -->
-			
+
 			<!-- Start Header -->
 			<header class="nftmax-header">
 				<div class="container">
@@ -190,7 +191,7 @@
 														<h4 class="nftmax-header__author-title">{{ $User_info_for_header['name'] }}</h4>
 														<p class="nftmax-header__author-text v1"><a href="#">{{ $User_info_for_header['user_name'] }}</a></p>
 													</div>
-													
+
 													<!-- NFTMax Profile Hover -->
 													<div class="nftmax-balance nftmax-profile__hover">
 														<h3 class="nftmax-balance__title">My Profile</h3>
