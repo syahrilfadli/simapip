@@ -27,6 +27,7 @@ Route::group(['middleware' => ["authenticated"]], function () {
 
     Route::group(['prefix' => 'pegawai', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [DataPegawai::class, 'index'])->name('index');
-        Route::get('/list', [DataPegawai::class, 'listPegawai'])->name('me');
+        Route::get('/list', [DataPegawai::class, 'listPegawai'])->name('list');
+        Route::get('/{id}/profile', [DataPegawai::class, 'profilePegawai'])->name('profile');
     })->name('pegawai');
 })->name("simapip");
