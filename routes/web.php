@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     DataPegawaiController as DataPegawai,
     PenugasanController,
     JenisPengawasanController as JenisPengawasan,
+    ObyekController as Obyek
 };
 
 /*
@@ -45,5 +46,15 @@ Route::group(['middleware' => ["authenticated"]], function () {
     Route::group(['prefix' => 'penugasan', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [PenugasanController::class, 'index'])->name('index');
     })->name('penugasan');
+
+    Route::group(['prefix' => 'obyek', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [Obyek::class, 'index'])->name('index');
+        Route::get('/list', [Obyek::class, 'listObyek'])->name('list');
+        Route::get('/create', [Obyek::class, 'create'])->name('create');
+        Route::post('/store', [Obyek::class, 'store'])->name('store');
+        Route::get('/{id}/edit', [Obyek::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}', [Obyek::class, 'update'])->name('update');
+        Route::delete('/{id}/delete', [Obyek::class, 'destroy'])->name('delete');
+    })->name('obyek');
 
 })->name("simapip");
