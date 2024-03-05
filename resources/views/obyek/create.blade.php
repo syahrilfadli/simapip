@@ -64,8 +64,7 @@
 														</div>
 													</div>
 													<div class="nftmax__item-button--group">
-														{{-- <button class="nftmax__item-button--single nftmax__item-button--cancel" data-bs-toggle="modal"  data-bs-target="#cancel_modal">Cancel</button> --}}
-                            
+                            <a class="nftmax__item-button--single nftmax__item-button--cancel" href="{{ url('/obyek') }}" type="submit">Cancel</a>
 														<button class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered bg radius nftmax-item__btn" type="submit">Create Now</button>
 														
 													</div>
