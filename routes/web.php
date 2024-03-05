@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     AuthController as Auth,
     DashboardController as Dashboard,
     DataPegawaiController as DataPegawai,
-    PenugasanController
+    PenugasanController,
+    JenisPengawasanController as JenisPengawasan,
 };
 
 /*
@@ -31,6 +32,15 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::get('/list', [DataPegawai::class, 'listPegawai'])->name('list');
         Route::get('/{id}/profile', [DataPegawai::class, 'profilePegawai'])->name('profile');
     })->name('pegawai');
+
+    Route::group(['prefix' => 'jenis-pengawasan', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [JenisPengawasan::class, 'index'])->name('index');
+        Route::get('/create', [JenisPengawasan::class, 'create'])->name('create');
+        Route::post('/store', [JenisPengawasan::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [JenisPengawasan::class, 'edit'])->name('edit');
+        Route::patch('update/{id}', [JenisPengawasan::class, 'update'])->name('update');
+        Route::delete('delete/{id}', [JenisPengawasan::class, 'destroy'])->name('delete');
+    })->name('jenis-pengawasan');
 
     Route::group(['prefix' => 'penugasan', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [PenugasanController::class, 'index'])->name('index');
