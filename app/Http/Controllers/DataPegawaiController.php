@@ -31,17 +31,22 @@ class DataPegawaiController extends Controller
                 $q->orWhereRaw('LOWER(nip) LIKE ?', ['%'.trim(strtolower($request->search)).'%']);
             }
         })
+        ->when($request->has('ja') && $request->ja != "all" && !empty($request->ja), function($q) use($request){
+            if($request->ja == "NOA"){
+                $q->whereNull('jabatan_kode');
+            }
+            else
+                $q->where('jabatan_kode', $request->ja);
+        })
         ->paginate($request->pageSize);
-
-        //Hanya untuk dummy
-        $data->getCollection()->transform(function ($user) {
-            $user->jabatan_terkini = "Auditor Ahli Madya";
-            $user->tmt_jabatan_terkini = "2024-01-01";
-            $user->pangkat_terkini = "IV\b";
-            $user->tmt_pangkat_terkini = "2024-01-01";
-            return $user;
-        });
         
         return $this->returnJsonSuccess("Userlist retrieved successfully", $data);
+    }
+
+    public function profilePegawai($id)
+    {
+        $data = VPegawai::find($id);
+
+        return view('DataPegawai.profile', compact('data'));
     }
 }

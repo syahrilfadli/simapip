@@ -26,10 +26,10 @@
                                 <div class="nftmax-marketplace__bar-inner">
                                     <!-- Marketplace Tab List -->
                                     <div class="list-group nftmax-marketplace__bar-list" id="list-tab" role="tablist">
-                                        <a class="list-group-item active" data-bs-toggle="list" href="#id1" role="tab">Semua</a>
-                                        <a class="list-group-item" data-bs-toggle="list" href="#id2" role="tab">Auditor Ahli</a>
-                                        <a class="list-group-item" data-bs-toggle="list" href="#id3" role="tab">Auditor Terampil</a>
-                                        <a class="list-group-item" data-bs-toggle="list" href="#id3" role="tab">Non Auditor</a>
+                                        <a class="list-group-item active" q-data-filter="all" onclick="return setFilterTab(this)" data-bs-toggle="list" href="#id1" role="tab">Semua</a>
+                                        <a class="list-group-item" q-data-filter="AA" onclick="return setFilterTab(this)" data-bs-toggle="list" href="#id2" role="tab">Auditor Ahli</a>
+                                        <a class="list-group-item" q-data-filter="AT" onclick="return setFilterTab(this)" data-bs-toggle="list" href="#id3" role="tab">Auditor Terampil</a>
+                                        <a class="list-group-item" q-data-filter="NOA" onclick="return setFilterTab(this)" data-bs-toggle="list" href="#id3" role="tab">Non Auditor</a>
                                     </div>
                                     <!-- End Marketplace Tab List -->
                                     
@@ -63,6 +63,7 @@
 @include('Layout.Footer')  
 <script src="{{ asset('plugins/qat-pagination/pagination.js') }}"></script>
 <script>
+    let ja = 'all'
     $(function(){
         loadPegawai();
 
@@ -73,11 +74,17 @@
         });
     })
 
+    function setFilterTab(obj){
+        var filter = $(obj).attr('q-data-filter');
+        ja = filter;
+        loadPegawai();
+    }
+
     function loadPegawai(){
         (function(containerId) {
             var container = $(containerId);
             container.pagination({
-            dataSource: '/pegawai/list?search='+encodeURIComponent($("#txt-search").val()),
+            dataSource: '/pegawai/list?search='+encodeURIComponent($("#txt-search").val())+'&ja='+ja,
             locator: 'items',
             totalNumberLocator: function(response) {
                 return response.data.total;
@@ -107,14 +114,14 @@
                                             <div class="nftmax-trendmeta__main">
                                                 <div class="nftmax-trendmeta__author">
                                                     <div class="nftmax-trendmeta__content">
-                                                        <span class="nftmax-trendmeta__small">Jabatan</span> <span class="badge bg-primary">${objData.tmt_jabatan_terkini}</span>
-                                                        <h4 class="nftmax-trendmeta__title">${objData.jabatan_terkini}</h4> 
+                                                        <span class="nftmax-trendmeta__small">Jabatan</span> <span class="badge bg-primary">${objData.jabatan_tmt ?? "Not set"}</span>
+                                                        <h4 class="nftmax-trendmeta__title">${objData.jabatan_nama ?? "Not set"}</h4> 
                                                     </div>
                                                 </div>
                                                 <div class="nftmax-trendmeta__author">
                                                     <div class="nftmax-trendmeta__content">
-                                                        <span class="nftmax-trendmeta__small">Pangkat</span> <span class="badge bg-primary">${objData.tmt_pangkat_terkini}</span>
-                                                        <h4 class="nftmax-trendmeta__title">${objData.pangkat_terkini}</h4> 
+                                                        <span class="nftmax-trendmeta__small">Pangkat</span> <span class="badge bg-primary">${objData.pangkat_nama ?? "Not set"}</span>
+                                                        <h4 class="nftmax-trendmeta__title">${objData.pangkat_tmt ?? "Not set"}</h4> 
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,7 +136,7 @@
                                         </div>
                                         <!-- Trending Body -->
                                         <div class="trending-action__body trending-marketplace__body">
-                                            <h2 class="trending-action__title"><a href="{{url('/template/market-place')}}">${objData.nama_lengkap}</a></h2>
+                                            <h2 class="trending-action__title"><a href="{{url('/pegawai/${objData.id}/profile')}}">${objData.nama_lengkap}</a></h2>
                                             <div class="nftmax-currency">
                                                 <div class="nftmax-currency__main">
                                                     <div class="nftmax-currency__content">
@@ -137,7 +144,7 @@
                                                         <p class="nftmax-currency__content-sub">${objData.email}</p>
                                                     </div>
                                                 </div>
-                                                <a href="{{url('/template/market-place')}}" class="nftmax-btn nftmax-btn__secondary radius">dalam Penugasan</a>
+                                                <a href="#" class="nftmax-btn nftmax-btn__secondary radius">Dalam Penugasan</a>
                                             </div>
                                         </div>
                                     </div>
