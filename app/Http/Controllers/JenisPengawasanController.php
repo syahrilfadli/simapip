@@ -35,7 +35,8 @@ class JenisPengawasanController extends Controller
             'nama' => $request->nama,
         ]);
         
-        return redirect()->back();
+        // return redirect()->back();
+        return Redirect::to('/jenis-pengawasan');
     }
 
  
