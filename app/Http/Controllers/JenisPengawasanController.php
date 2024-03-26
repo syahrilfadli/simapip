@@ -55,8 +55,8 @@ class JenisPengawasanController extends Controller
     public function update(Request $request, String $id)
     {
         $request->validate([
-            'kode' => 'required|string|min:5|max:30',
-            'nama' => 'required|string|min:5|max:100',
+            'kode' => 'required|string|max:30',
+            'nama' => 'required|string|max:100',
         ]);
 
         JenisPengawasan::where('id', $id)->update([
