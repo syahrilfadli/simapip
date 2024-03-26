@@ -9,7 +9,7 @@
                     <div class="nftmax-dsinner">
                         <!-- All Notification Heading -->
                         <div class="nftmax-inner__heading">
-                            <h2 class="nftmax-inner__page-title">Tambah Obyek Baru</h2>
+                            <h2 class="nftmax-inner__page-title">Tambah Jenis Pengawasan Baru</h2>
                         </div>
                         <!-- End All Notification Heading -->
 
