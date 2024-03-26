@@ -8,7 +8,9 @@ use App\Http\Controllers\{
     PenugasanController,
     JenisPengawasanController as JenisPengawasan,
     ObyekController as Obyek,
-    jenjangJabatanController as jenJabatan
+    jenjangJabatanController as jenJabatan,
+    jabatanController as jabatan,
+    pangkatController as pangkat,
 };
 
 /*
@@ -66,6 +68,26 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::get('/edit/{id}', [jenJabatan::class, 'edit'])->name('edit');
         Route::patch('/update/{id}', [jenJabatan::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [jenJabatan::class, 'destroy'])->name('delete');
+    })->name('obyek');
+
+    Route::group(['prefix' => 'jabatan', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [jabatan::class, 'index'])->name('index');
+        Route::get('/list', [jabatan::class, 'listJabatan'])->name('list');
+        Route::get('/create', [jabatan::class, 'create'])->name('create');
+        Route::post('/store', [jabatan::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [jabatan::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}', [jabatan::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [jabatan::class, 'destroy'])->name('delete');
+    })->name('obyek');
+
+    Route::group(['prefix' => 'pangkat', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [pangkat::class, 'index'])->name('index');
+        Route::get('/list', [pangkat::class, 'listPangkat'])->name('list');
+        Route::get('/create', [pangkat::class, 'create'])->name('create');
+        Route::post('/store', [pangkat::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [pangkat::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}', [pangkat::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [pangkat::class, 'destroy'])->name('delete');
     })->name('obyek');
 
 })->name("simapip");
