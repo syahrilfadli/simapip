@@ -29,8 +29,10 @@
                                 <div class="nftmax-marketplace__bar-right">
                                     <div class="nftmax-marketplace__bar-one">
                                         <div class="nftmax-marketplace__bar-search">
-                                            <button id="btn-search" class="search-btn" type="button"><img src="/assets/img/search.png" alt="#"></button>
-                                            <input name="txt-search" id="txt-search" value="" type="text" placeholder="Ketikan kode atau nama...">
+                                            <button id="btn-search" class="search-btn" type="button"><img
+                                                    src="/assets/img/search.png" alt="#"></button>
+                                            <input name="txt-search" id="txt-search" value="" type="text"
+                                                placeholder="Ketikan kode atau nama...">
                                         </div>
                                     </div>
                                 </div>
@@ -149,6 +151,7 @@
                                                             {{ $item['kode'] }}
                                                         </p>
                                                     </td>
+
                                                     <td class="nftmax-table__column-3 nftmax-table__data-2">
                                                         <p
                                                             class="nftmax-table__text nftmax-table__up-down nftmax-bcolor">
@@ -185,14 +188,14 @@
 </section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         var searchInput = document.getElementById('txt-search');
         var tableRows = document.querySelectorAll('.nftmax-table__body tr');
 
-        searchInput.addEventListener('input', function () {
+        searchInput.addEventListener('input', function() {
             var searchTerm = searchInput.value.toLowerCase();
 
-            tableRows.forEach(function (row) {
+            tableRows.forEach(function(row) {
                 var kode = row.querySelector('.nftmax-table__data-1').textContent.toLowerCase();
                 var nama = row.querySelector('.nftmax-table__data-2').textContent.toLowerCase();
 
