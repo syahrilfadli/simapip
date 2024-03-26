@@ -7,6 +7,8 @@ use App\Http\Controllers\{
     DataPegawaiController as DataPegawai,
     PenugasanController,
     JenisPengawasanController as JenisPengawasan,
+    StrataPendidikanController as StrataPendidikan,
+    UnitKerjaController as UnitKerja,
     ObyekController as Obyek
 };
 
@@ -56,5 +58,23 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::patch('/update/{id}', [Obyek::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [Obyek::class, 'destroy'])->name('delete');
     })->name('obyek');
+
+    Route::group(['prefix' => 'strata-pendidikan', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [StrataPendidikan::class, 'index'])->name('index');
+        Route::get('/create', [StrataPendidikan::class, 'create'])->name('create');
+        Route::post('/store', [StrataPendidikan::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [StrataPendidikan::class, 'edit'])->name('edit');
+        Route::patch('update/{id}', [StrataPendidikan::class, 'update'])->name('update');
+        Route::delete('delete/{id}', [StrataPendidikan::class, 'destroy'])->name('delete');
+    })->name('strata-pendidikan');
+
+    Route::group(['prefix' => 'unit-kerja', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [UnitKerja::class, 'index'])->name('index');
+        Route::get('/create', [UnitKerja::class, 'create'])->name('create');
+        Route::post('/store', [UnitKerja::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [UnitKerja::class, 'edit'])->name('edit');
+        Route::patch('update/{id}', [UnitKerja::class, 'update'])->name('update');
+        Route::delete('delete/{id}', [UnitKerja::class, 'destroy'])->name('delete');
+    })->name('unit-kerja');
 
 })->name("simapip");
