@@ -41,17 +41,17 @@
                         <div class="nftmax-marketplace__bar mg-top-50 mg-btm-40">
                             <div class="nftmax-marketplace__bar-inner">
                                 <!-- Marketplace Tab List -->
-                                <div class="list-group nftmax-marketplace__bar-list" id="list-tab" role="tablist">
+                                {{-- <div class="list-group nftmax-marketplace__bar-list" id="list-tab" role="tablist">
                                     <a class="list-group-item active" q-data-filter="all"
                                         onclick="return setFilterTab(this)" data-bs-toggle="list" href="#id1"
                                         role="tab">Semua</a>
-                                    {{-- <a class="list-group-item" q-data-filter="AA" onclick="return setFilterTab(this)"
+                                    <a class="list-group-item" q-data-filter="AA" onclick="return setFilterTab(this)"
                                         data-bs-toggle="list" href="#id2" role="tab">Auditor Ahli</a>
                                     <a class="list-group-item" q-data-filter="AT" onclick="return setFilterTab(this)"
                                         data-bs-toggle="list" href="#id3" role="tab">Auditor Terampil</a>
                                     <a class="list-group-item" q-data-filter="NOA" onclick="return setFilterTab(this)"
-                                        data-bs-toggle="list" href="#id3" role="tab">Non Auditor</a> --}}
-                                </div>
+                                        data-bs-toggle="list" href="#id3" role="tab">Non Auditor</a>
+                                </div> --}}
                                 <!-- End Marketplace Tab List -->
                                 <div class="nftmax-marketplace__bar-right">
                                     <div class="nftmax-marketplace__bar-one">
@@ -146,7 +146,7 @@
                                     "<div id='content' class='row' style='margin-top: 20px; min-height: 10%'; min-width: 10%; ></div>"
                                 );
                                 
-                              dataHtml += '<div class="nftmax-table mg-top-40">';
+                              dataHtml += '<div class="nftmax-table mg-top-10">';
                               dataHtml += '<div class="nftmax-table__heading">';
                               dataHtml += '<h3 class="nftmax-table__title mb-0">DATA OBYEK <span class="nftmax-table__badge">435</span></h3> </div>';
                               dataHtml += '<div class="tab-content" id="myTabContent">';
@@ -176,39 +176,46 @@
                                             <span class="nftmax-table__text">${objData.kode ?? "Not set"}</span>
                                         </div>
                                         <div class="nftmax-table__product-content">
-																		      <h4 class="nftmax-table__product-title">Statis</h4>
-																		      <p class="nftmax-table__product-desc">Owned by  <a href="#">${objData.nama ?? "Not set"}</a></p>
-																	      </div>
+											<p class="nftmax-table__product-desc"><a href="#">${objData.nama_jabatan ?? "Not set"}</a></p>
+									    </div>
                                       </div>
                                     </td>
 
                                     <td class="nftmax-table__column-1 nftmax-table__data-1">
-																      <div class="nftmax-table__amount nftmax-table__text-one">
-																	      <span class="nftmax-table__text">${objData.nama ?? "Not set"}</span>
-																      </div>
-															      </td>
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.nama ?? "Not set"}</span>
+									    </div>
+									</td>
 
-                                    <td class="nftmax-table__column-2 nftmax-table__data-2">
-																      <div class="nftmax-table__amount nftmax-table__text-two">
-																	      <span class="nftmax-table__text">${objData.alamat ?? "Not set"}</span>
-																      </div>
-															      </td>
+                                    <td class="nftmax-table__column-1 nftmax-table__data-1">
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.alamat ?? "Not set"}</span>
+									    </div>
+									</td>
 
-                                    <td class="nftmax-table__column-5 nftmax-table__data-5">
-																      <p class="nftmax-table__text nftmax-table__up-down nftmax-rcolor">${objData.no_telp ?? "Not set"}</p>
-															      </td>
+                                    <td class="nftmax-table__column-1 nftmax-table__data-1">
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.no_telp ?? "Not set"}</span>
+									    </div>
+									</td>
 
-                                    <td class="nftmax-table__column-5 nftmax-table__data-5">
-																      <p class="nftmax-table__text nftmax-table__bid-text">${objData.email ?? "Not set"}</p>
-															      </td>
+                                    <td class="nftmax-table__column-1 nftmax-table__data-1">
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.email ?? "Not set"}</span>
+									    </div>
+									</td>
 
-                                    <td class="nftmax-table__column-4 nftmax-table__data-4">
-																      <p class="nftmax-table__text nftmax-table__time">${objData.website ?? "Not set"}</p>
-															      </td>
+                                    <td class="nftmax-table__column-1 nftmax-table__data-1">
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.website ?? "Not set"}</span>
+									    </div>
+									</td>
 
-                                    <td class="nftmax-table__column-10 nftmax-table__data-10">
-																      <p class="nftmax-table__text nftmax-table__time">${objData.pimpinan ?? "Not set"}</p>
-															      </td>
+                                    <td class="nftmax-table__column-1 nftmax-table__data-1">
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.pimpinan ?? "Not set"}</span>
+									    </div>
+									</td>
 
                                     <td class="nftmax-table__column-10 nftmax-table__data-10">
                                         <div class="nftmax-table__amount nftmax-table__text-two">
