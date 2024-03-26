@@ -7,7 +7,8 @@ use App\Http\Controllers\{
     DataPegawaiController as DataPegawai,
     PenugasanController,
     JenisPengawasanController as JenisPengawasan,
-    ObyekController as Obyek
+    ObyekController as Obyek,
+    jenjangJabatanController as jenJabatan
 };
 
 /*
@@ -55,6 +56,16 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::get('/edit/{id}', [Obyek::class, 'edit'])->name('edit');
         Route::patch('/update/{id}', [Obyek::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [Obyek::class, 'destroy'])->name('delete');
+    })->name('obyek');
+
+    Route::group(['prefix' => 'jenjangJabatan', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [jenJabatan::class, 'index'])->name('index');
+        Route::get('/list', [jenJabatan::class, 'listjenjangJabatan'])->name('list');
+        Route::get('/create', [jenJabatan::class, 'create'])->name('create');
+        Route::post('/store', [jenJabatan::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [jenJabatan::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}', [jenJabatan::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [jenJabatan::class, 'destroy'])->name('delete');
     })->name('obyek');
 
 })->name("simapip");

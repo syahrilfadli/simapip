@@ -126,7 +126,7 @@
                             totalNumberLocator: function(response) {
                                 return response.data.total;
                             },
-                            pageSize: 8,
+                            pageSize: 1,
                             locator: 'data.data',
                             ajax: {
                                 beforeSend: function() {
@@ -255,6 +255,15 @@
                                 dataHtml += '</div>';
                                 dataHtml += '</div>';
                                 $("#obyek-container #content").html(dataHtml);
+
+                                // Update pagination after data is loaded
+                                pagination.update({
+                                    dataSource: '/obyek/list?search=' + encodeURIComponent($("#txt-search").val()) + '&ja=' + ja,
+                                    locator: 'items',
+                                    totalNumberLocator: function(response) {
+                                        return response.data.total;
+                                    }
+                                });
                             }
                         })
                     })('#obyek-pagination-container');
