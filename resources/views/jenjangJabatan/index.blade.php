@@ -26,13 +26,13 @@
                         <!-- Welcome CTA -->
                         <div class="welcome-cta mg-top-40">
                             <div class="welcome-cta__heading">
-                                <h2 class="welcome-cta__title">Obyek</h2>
-                                <p class="welcome-cta__text">Anda dapat menambahkan dan mengubah profile obyek di
+                                <h2 class="welcome-cta__title">Jenjang Jabatan</h2>
+                                <p class="welcome-cta__text">Anda dapat menambahkan dan mengubah daftar Jenjang Jabatan di
                                     module ini.</p>
                             </div>
                             <div class="welcome-cta__button">
-                                <a href="{{ url('/obyek/create') }}"
-                                    class="nftmax-btn nftmax-btn__bordered bg radius">Tambah Obyek</a>
+                                <a href="{{ url('/jenjangJabatan/create') }}"
+                                    class="nftmax-btn nftmax-btn__bordered bg radius">Tambah Jenjang Jabatan</a>
                                 {{-- <a href="{{ url('/template/market-place') }}"
                                     class="nftmax-btn trs-white bl-color">Manajemen Unit</a> --}}
                             </div>
@@ -61,7 +61,7 @@
                                             <button id="btn-search" class="search-btn" type="button"><img
                                                     src="/assets/img/search.png" alt="#"></button>
                                             <input name="txt-search" id="txt-search" value="" type="text"
-                                                placeholder="Ketikan nama...">
+                                                placeholder="Search...">
                                         </div>
                                     </div>
                                 </div>
@@ -147,14 +147,14 @@
                                 // }else{
                                 //     $("#pegawai-container").html("<div id='content' class='row' style='margin-top: 20px; min-height: 10%'></div>");
                                 // }
-                                $("#obyek-container").html(
+                                $("#jenjangJabatan-container").html(
                                     "<div id='content' class='row' style='margin-top: 20px; min-height: 10%'; min-width: 10%; ></div>"
                                 );
 
                                 dataHtml += '<div class="nftmax-table mg-top-10">';
                                 dataHtml += '<div class="nftmax-table__heading">';
                                 dataHtml +=
-                                    '<h3 class="nftmax-table__title mb-0">DATA OBYEK <span class="nftmax-table__badge">435</span></h3> </div>';
+                                    '<h3 class="nftmax-table__title mb-0">Data Jenjang Jabatan <span class="nftmax-table__badge">435</span></h3> </div>';
                                 dataHtml += '<div class="tab-content" id="myTabContent">';
                                 dataHtml +=
                                     '<div class="tab-panel fade show active" id="table_1" role="tabpanel" aria-labelledby="table_1">';
@@ -165,6 +165,7 @@
                                 dataHtml += '<th class="nftmax-table__column-1 nftmax-table__h1">Kode</th>';
                                 dataHtml += '<th class="nftmax-table__column-1 nftmax-table__h1">Nama</th>';
                                 dataHtml += '<th class="nftmax-table__column-2 nftmax-table__h2">Level</th>';
+                                dataHtml += '<th class="nftmax-table__column-2 nftmax-table__h2">Aksi</th>';
                                 // Tambahkan header kolom lain sesuai kebutuhan
                                 dataHtml += '</tr>';
                                 dataHtml += '</thead>';
@@ -193,7 +194,7 @@
                                     
                                     <td class="nftmax-table__column-10 nftmax-table__data-10">
                                         <div class="nftmax-table__amount nftmax-table__text-two">
-                                          <a href="/obyek/edit/${objData.id}" class="btn btn-primary me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>
+                                          <a href="/jenjangJabatan/edit/${objData.id}" class="btn btn-primary me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>
                                           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-${objData.id}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>
                                         </div>
 
@@ -210,7 +211,7 @@
                                               </div>
                                               <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <form action="{{ url('obyek/delete/${objData.id}') }}" method="POST">
+                                                <form action="{{ url('jenjangJabatan/delete/${objData.id}') }}" method="POST">
                                                   @csrf
                                                   @method('DELETE')
                                                   <button type="submit" class="btn btn-danger me-3">Hapus</button>
@@ -223,14 +224,14 @@
                                     <!-- Tambahkan kolom-kolom lain sesuai kebutuhan -->
                                 </tr>`;
 
-                                });
+                                }); 
                                 dataHtml += '</tbody>';
                                 dataHtml += '</table>';
                                 dataHtml += '</div>';
-                                dataHtml += '</div>';
-                                $("#obyek-container #content").html(dataHtml);
+                                dataHtml += '</div>';                              
+                                $("#jenjangJabatan-container #content").html(dataHtml);
                             }
                         })
-                    })('#obyek-pagination-container');
+                    })('#jenjangJabatan-pagination-container');
                 }
             </script>

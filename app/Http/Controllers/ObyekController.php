@@ -28,8 +28,8 @@ class ObyekController extends Controller
         $data = Obyek::where(function ($q) use ($request) {
                 if ($request->has('search') && $request->search != "") {
                     $q->whereRaw('LOWER(nama) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
-                    // $q->orWhereRaw('LOWER(email) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
-                    // $q->orWhereRaw('LOWER(kode) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
+                    $q->orWhereRaw('LOWER(email) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
+                    $q->orWhereRaw('LOWER(kode) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
                 }
             })
             ->when($request->has('ja') && $request->ja != "all" && !empty($request->ja), function ($q) use ($request) {

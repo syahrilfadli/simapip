@@ -9,7 +9,8 @@ use App\Http\Controllers\{
     JenisPengawasanController as JenisPengawasan,
     StrataPendidikanController as StrataPendidikan,
     UnitKerjaController as UnitKerja,
-    ObyekController as Obyek
+    ObyekController as Obyek,
+    jenjangJabatanController as jenJabatan
 };
 
 /*
@@ -76,5 +77,14 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::patch('update/{id}', [UnitKerja::class, 'update'])->name('update');
         Route::delete('delete/{id}', [UnitKerja::class, 'destroy'])->name('delete');
     })->name('unit-kerja');
+    Route::group(['prefix' => 'jenjangJabatan', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [jenJabatan::class, 'index'])->name('index');
+        Route::get('/list', [jenJabatan::class, 'listjenjangJabatan'])->name('list');
+        Route::get('/create', [jenJabatan::class, 'create'])->name('create');
+        Route::post('/store', [jenJabatan::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [jenJabatan::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}', [jenJabatan::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [jenJabatan::class, 'destroy'])->name('delete');
+    })->name('obyek');
 
 })->name("simapip");
