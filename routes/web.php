@@ -52,9 +52,9 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::get('/list', [Obyek::class, 'listObyek'])->name('list');
         Route::get('/create', [Obyek::class, 'create'])->name('create');
         Route::post('/store', [Obyek::class, 'store'])->name('store');
-        Route::get('/{id}/edit', [Obyek::class, 'edit'])->name('edit');
+        Route::get('/edit/{id}', [Obyek::class, 'edit'])->name('edit');
         Route::patch('/update/{id}', [Obyek::class, 'update'])->name('update');
-        Route::delete('/{id}/delete', [Obyek::class, 'destroy'])->name('delete');
+        Route::delete('/delete/{id}', [Obyek::class, 'destroy'])->name('delete');
     })->name('obyek');
 
 })->name("simapip");

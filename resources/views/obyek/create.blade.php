@@ -14,6 +14,18 @@
 									<!-- End All Notification Heading -->
 									
 									<div class="nftmax__item">
+										@if ($errors->any())
+											<div id="error-alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+													<ul>
+															@foreach ($errors->all() as $error)
+																	<li>{{ $error }}</li>
+															@endforeach
+													</ul>
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            								<span aria-hidden="true">&times;</span>
+        									</button>
+											</div>
+										@endif
 										<div class="nftmax__item-heading">
 											<h2 class="nftmax__item-title nftmax__item-title--psingle">Silahkan Inputkan Nama, Alamat, No HP, Email, Website & Pimpinan Anda</h2>
 											<p class="nftmax__item-text nftmax__item-text--single">Mohon Input Data Yang Valid!</p>
@@ -77,4 +89,4 @@
 								<!-- End Dashboard Inner -->
 							</div>
 						</div>
-@include('Layout.Template.Footer')                        
+@include('Layout.Template.Footer')

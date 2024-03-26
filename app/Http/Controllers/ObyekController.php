@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Hash;
 use Session;
@@ -48,30 +49,43 @@ class ObyekController extends Controller
         return view('obyek.create');
     }
 
-    
+
     public function store(Request $request)
     {
-        $request->validate([
-            'kode' => 'required',
-            'nama' => 'required|min:3',
-            'alamat' => 'required',
-            'no_telp' => 'required',
-            'email' => 'required|email',
+        $validator = Validator::make($request->all(), [
+            'kode' => 'required|string|max:10',
+            'nama' => 'required|string|max:100',
+            'alamat' => 'required', 
+            'no_telp' => 'required|min:10|unique:ref_obyek,no_telp',
+            'email' => 'required|email|unique:ref_obyek,email',
             'website' => 'required',
             'pimpinan' => 'required',
+        ], [
+            'no_telp.unique' => 'Nomor Telephone Sudah Terdaftar / Tidak Valid.',
+            'email.unique' => 'Email Sudah Terdaftar / Tidak Valid.',
         ]);
 
-        Obyek::create([
-            'kode' => $request->kode,
-            'nama' => $request->nama,
-            'alamat' => $request->alamat,
-            'no_telp' => $request->no_telp,
-            'email' => $request->email,
-            'website' => $request->website,
-            'pimpinan' => $request->pimpinan,
-        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        return redirect()->route('index')->with('success', 'Berhasil menambahkan data Obyek!');
+        try {
+            Obyek::create([
+                'kode' => $request->kode,
+                'nama' => $request->nama,
+                'alamat' => $request->alamat,
+                'no_telp' => $request->no_telp,
+                'email' => $request->email,
+                'website' => $request->website,
+                'pimpinan' => $request->pimpinan,
+            ]);
+
+            return redirect()->route('index')->with('success', 'Berhasil menambahkan data Obyek!');
+        } catch (\Exception $e) {
+            dd($e->getMessage()); // Menampilkan pesan error pada pengecualian
+            return redirect()->back()->with('error', 'Gagal menambahkan data Obyek: ' . $e->getMessage());
+        }
+
     }
 
     
@@ -92,8 +106,8 @@ class ObyekController extends Controller
     public function update(Request $request, ObyekController $obyekController, $id)
     {
         $request->validate([
-            'kode' => 'required',
-            'nama' => 'required|min:3',
+            'kode' => 'required|string|max:10',
+            'nama' => 'required|string|max:100',
             'alamat' => 'required',
             'no_telp' => 'required',
             'email' => 'required|email',
