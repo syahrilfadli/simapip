@@ -209,31 +209,19 @@
 
 													<!-- NFTMax Profile Hover -->
 													<div class="nftmax-balance nftmax-profile__hover">
-														<h3 class="nftmax-balance__title">My Profile</h3>
+														<h3 class="nftmax-balance__title">Profile Saya</h3>
 														<!-- NFTMax Balance List -->
 														<ul class="nftmax-balance_list">
 															<li>
 																<div class="nftmax-balance-info">
 																	<div class="nftmax-balance__img nftmax-profile__img-one"><img src="assets/img/profile-1.png" alt="#"></div>
-																	<h4 class="nftmax-balance-name"><a href="{{url('/my-profile')}}">My Profile</a></h4>
-																</div>
-															</li>
-															<li>
-																<div class="nftmax-balance-info">
-																	<div class="nftmax-balance__img nftmax-profile__img-two"><img src="assets/img/profile-2.png" alt="#"></div>
-																	<h4 class="nftmax-balance-name"><a href="{{url('/message')}}">Message</a><span class="nftmax-profile__count">19</span></h4>
-																</div>
-															</li>
-															<li>
-																<div class="nftmax-balance-info">
-																	<div class="nftmax-balance__img nftmax-profile__img-three"><img src="assets/img/profile-3.png" alt="#"></div>
-																	<h4 class="nftmax-balance-name"><a href="{{url('/history')}}">History</a></h4>
+																	<h4 class="nftmax-balance-name"><a href="{{url('/my-profile')}}">Profile Saya</a></h4>
 																</div>
 															</li>
 															<li>
 																<div class="nftmax-balance-info">
 																	<div class="nftmax-balance__img nftmax-profile__img-four"><img src="assets/img/profile-4.png" alt="#"></div>
-																	<h4 class="nftmax-balance-name"><a href="{{url('/setting')}}">Setting</a></h4>
+																	<h4 class="nftmax-balance-name"><a href="{{url('/setting')}}">Ubah Password</a></h4>
 																</div>
 															</li>
 															<li>

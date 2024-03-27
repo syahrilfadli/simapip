@@ -136,7 +136,7 @@
                             ajax: {
                                 beforeSend: function() {
                                     $("#jenjangJabatan-container").html(
-                                        '<div class="inline-no-data">Loading data...</div>');
+                                    '<div class="inline-no-data">Loading data...</div>');
                                 }
                             },
                             callback: function(response, pagination) {
@@ -154,7 +154,7 @@
                                 dataHtml += '<div class="nftmax-table mg-top-10">';
                                 dataHtml += '<div class="nftmax-table__heading">';
                                 dataHtml +=
-                                    '<h3 class="nftmax-table__title mb-0">Data Jenjang Jabatan <span class="nftmax-table__badge">435</span></h3> </div>';
+                                    '<h3 class="nftmax-table__title mb-0">Data Jenjang Jabatan </div>';
                                 dataHtml += '<div class="tab-content" id="myTabContent">';
                                 dataHtml +=
                                     '<div class="tab-panel fade show active" id="table_1" role="tabpanel" aria-labelledby="table_1">';
