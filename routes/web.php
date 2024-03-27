@@ -13,6 +13,7 @@ use App\Http\Controllers\{
     jenjangJabatanController as jenJabatan,
     jabatanController as jabatan,
     pangkatController as pangkat,
+    UserController as Users,
 };
 
 /*
@@ -32,6 +33,11 @@ Route::post('/login', [Auth::class, 'login'])->name('login.call');
 Route::group(['middleware' => ["authenticated"]], function () {
     Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
     Route::get('/logout', [Auth::class, 'logout'])->name('logout');
+
+    Route::group(['prefix' => 'user', 'middleware' => ["authenticated"]], function () {
+        Route::get('/ubah-password', [Users::class, 'showChangePasswordForm'])->name('showChangePassword');
+        Route::patch('/mengubah-password', [Users::class, 'changePassword'])->name('changePassword');
+    })->name('user');
 
     Route::group(['prefix' => 'pegawai', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [DataPegawai::class, 'index'])->name('index');
