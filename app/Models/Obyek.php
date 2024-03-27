@@ -17,6 +17,7 @@ class Obyek extends Model
         'email',
         'website',
         'pimpinan',
+        'nip_pimpinan',
     ];
     protected $table = 'ref_obyek';
 }

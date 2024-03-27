@@ -60,9 +60,11 @@ class ObyekController extends Controller
             'email' => 'required|email|unique:ref_obyek,email',
             'website' => 'required',
             'pimpinan' => 'required',
+            'nip_pimpinan' => 'required|numeric|unique:ref_obyek,nip_pimpinan',
         ], [
             'no_telp.unique' => 'Nomor Telephone Sudah Terdaftar / Tidak Valid.',
             'email.unique' => 'Email Sudah Terdaftar / Tidak Valid.',
+            'nip_pimpinan' => 'NIP Sudah Terdaftar / Tidak Valid.',
         ]);
 
         if ($validator->fails()) {
@@ -78,9 +80,10 @@ class ObyekController extends Controller
                 'email' => $request->email,
                 'website' => $request->website,
                 'pimpinan' => $request->pimpinan,
+                'nip_pimpinan' => $request->nip_pimpinan,
             ]);
 
-            return redirect()->route('index')->with('success', 'Berhasil menambahkan data Obyek!');
+            return Redirect::to('/obyek')->with('success', 'Berhasil mengubah data!');
         } catch (\Exception $e) {
             dd($e->getMessage()); // Menampilkan pesan error pada pengecualian
             return redirect()->back()->with('error', 'Gagal menambahkan data Obyek: ' . $e->getMessage());
@@ -113,6 +116,7 @@ class ObyekController extends Controller
             'email' => 'required|email',
             'website' => 'required',
             'pimpinan' => 'required',
+            'nip_pimpinan' => 'required|numeric',
         ]);
 
         Obyek::where('id', $id)->update([
@@ -123,6 +127,7 @@ class ObyekController extends Controller
             'email' => $request->email,
             'website' => $request->website,
             'pimpinan' => $request->pimpinan,
+            'nip_pimpinan' => $request->nip_pimpinan,
         ]);
 
         return Redirect::to('/obyek')->with('success', 'Berhasil mengubah data!');
