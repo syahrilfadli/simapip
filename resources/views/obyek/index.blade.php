@@ -148,7 +148,7 @@
                                 
                               dataHtml += '<div class="nftmax-table mg-top-10">';
                               dataHtml += '<div class="nftmax-table__heading">';
-                              dataHtml += '<h3 class="nftmax-table__title mb-0">DATA OBYEK <span class="nftmax-table__badge">435</span></h3> </div>';
+                              dataHtml += '<h3 class="nftmax-table__title mb-0">DATA OBYEK </div>'; // <span class="nftmax-table__badge">435</span></h3>
                               dataHtml += '<div class="tab-content" id="myTabContent">';
                               dataHtml += '<div class="tab-panel fade show active" id="table_1" role="tabpanel" aria-labelledby="table_1">';
                               dataHtml += '<table id="nftmax-table__main" class="nftmax-table__main nftmax-table__main-v2">';
