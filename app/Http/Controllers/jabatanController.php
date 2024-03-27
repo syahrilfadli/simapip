@@ -107,7 +107,7 @@ class jabatanController extends Controller
             'kelompok_jabatan' => $request->kelompok_jabatan,
         ]);
 
-        return redirect()->route('index')->with('success', 'Berhasil mengubah data!');
+        return Redirect::to('/jabatan')->with('success', 'Berhasil mengubah data!');
     }
 
     public function destroy(jabatan $jabatanController, $id)

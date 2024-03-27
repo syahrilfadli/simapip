@@ -132,7 +132,7 @@ class pangkatController extends Controller
             'urutan' => $request->urutan,
         ]);
 
-        return redirect()->route('index')->with('success', 'Berhasil mengubah data!');
+        return Redirect::to('/pangkat')->with('success', 'Berhasil mengubah data!');
     }
 
     public function destroy(pangkat $pangkatController, $id)

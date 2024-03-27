@@ -125,7 +125,7 @@ class ObyekController extends Controller
             'pimpinan' => $request->pimpinan,
         ]);
 
-        return redirect()->route('index')->with('success', 'Berhasil mengubah data!');
+        return Redirect::to('/obyek')->with('success', 'Berhasil mengubah data!');
     }
 
     public function destroy(Obyek $obyekController, $id)

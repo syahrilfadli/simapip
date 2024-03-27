@@ -109,7 +109,7 @@ class JenjangJabatanController extends Controller
             
         ]);
 
-        return redirect()->route('index')->with('success', 'Berhasil mengubah data!');
+        return Redirect::to('/jenjangJabatan')->with('success', 'Berhasil mengubah data!');
     }
 
     public function destroy(jenjangJabatan $jenjangJabatanController, $id)
