@@ -26,7 +26,7 @@
                                     module ini.</p>
                             </div>
                             <div class="welcome-cta__button">
-                                <a href="{{ url('/jenis-pengawasan/create') }}"
+                                <a href="{{ url('/unit-kerja/create') }}"
                                     class="nftmax-btn nftmax-btn__bordered bg radius">Tambah Unit Kerja</a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                             <button id="btn-search" class="search-btn" type="button"><img
                                                     src="/assets/img/search.png" alt="#"></button>
                                             <input name="txt-search" id="txt-search" value="" type="text"
-                                                placeholder="Ketikan kode atau nama...">
+                                                placeholder="Ketikan Nama Unit, Nama...">
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                                 <th class="nftmax-table__column-3 nftmax-table__h3">Nama Singkatan</th>
                                                 <th class="nftmax-table__column-4 nftmax-table__h4">Alamat</th>
                                                 <th class="nftmax-table__column-5 nftmax-table__h5">Pimpinan</th>
-                                                <th class="nftmax-table__column-6 nftmax-table__h6">No. Telp.</th>
+                                                <th class="nftmax-table__column-6 nftmax-table__h6">No. Telp</th>
                                                 <th class="nftmax-table__column-7 nftmax-table__h7">Email</th>
                                                 <th class="nftmax-table__column-8 nftmax-table__h8">Website</th>
                                                 {{-- <th class="nftmax-table__column-9 nftmax-table__h9">No. Urut</th> --}}
@@ -148,7 +148,7 @@
                                                 <th class="nftmax-table__column-3 nftmax-table__h3">Nama Singkatan</th>
                                                 <th class="nftmax-table__column-4 nftmax-table__h4">Alamat</th>
                                                 <th class="nftmax-table__column-5 nftmax-table__h5">Pimpinan</th>
-                                                <th class="nftmax-table__column-6 nftmax-table__h6">No. Telp.</th>
+                                                <th class="nftmax-table__column-6 nftmax-table__h6">No. Telp</th>
                                                 <th class="nftmax-table__column-7 nftmax-table__h7">Email</th>
                                                 <th class="nftmax-table__column-8 nftmax-table__h8">Website</th>
                                                 {{-- <th class="nftmax-table__column-9 nftmax-table__h9">No. Urut</th> --}}
@@ -236,7 +236,7 @@
                                                 <th class="nftmax-table__column-3 nftmax-table__h3">Nama Singkatan</th>
                                                 <th class="nftmax-table__column-4 nftmax-table__h4">Alamat</th>
                                                 <th class="nftmax-table__column-5 nftmax-table__h5">Pimpinan</th>
-                                                <th class="nftmax-table__column-6 nftmax-table__h6">No. Telp.</th>
+                                                <th class="nftmax-table__column-6 nftmax-table__h6">No. Telp</th>
                                                 <th class="nftmax-table__column-7 nftmax-table__h7">Email</th>
                                                 <th class="nftmax-table__column-8 nftmax-table__h8">Website</th>
                                                 {{-- <th class="nftmax-table__column-9 nftmax-table__h9">No. Urut</th> --}}
