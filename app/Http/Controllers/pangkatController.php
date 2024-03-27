@@ -78,7 +78,7 @@ class pangkatController extends Controller
             ]);
 
 
-            return redirect()->route('index')->with('success', 'Berhasil Menambahkan Data!');
+            return Redirect::to('/pangkat')->with('success', 'Berhasil mengubah data!');
         } catch (\Exception $e) {
             dd($e->getMessage()); // Menampilkan pesan error pada pengecualian
             return redirect()->back()->with('error', 'Gagal Menambahkan Data: ' . $e->getMessage());
@@ -132,7 +132,7 @@ class pangkatController extends Controller
             'urutan' => $request->urutan,
         ]);
 
-        return redirect()->route('index')->with('success', 'Berhasil mengubah data!');
+        return Redirect::to('/pangkat')->with('success', 'Berhasil mengubah data!');
     }
 
     public function destroy(pangkat $pangkatController, $id)

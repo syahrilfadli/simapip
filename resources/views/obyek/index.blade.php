@@ -59,7 +59,7 @@
                                             <button id="btn-search" class="search-btn" type="button"><img
                                                     src="/assets/img/search.png" alt="#"></button>
                                             <input name="txt-search" id="txt-search" value="" type="text"
-                                                placeholder="Ketikan nama...">
+                                                placeholder="Search...">
                                         </div>
                                     </div>
                                 </div>
@@ -161,6 +161,7 @@
                               dataHtml += '<th class="nftmax-table__column-5 nftmax-table__h5">Email</th>';
                               dataHtml += '<th class="nftmax-table__column-4 nftmax-table__h4">Website</th>';
                               dataHtml += '<th class="nftmax-table__column-10 nftmax-table__h10">Pimpinan</th>';
+                              dataHtml += '<th class="nftmax-table__column-10 nftmax-table__h10">NIP Pimpinan</th>';
                               dataHtml += '<th class="nftmax-table__column-10 nftmax-table__h10">Aksi </th>';
                               // Tambahkan header kolom lain sesuai kebutuhan
                               dataHtml += '</tr>';
@@ -214,6 +215,12 @@
                                     <td class="nftmax-table__column-1 nftmax-table__data-1">
 										<div class="nftmax-table__amount nftmax-table__text-one">
 											<span class="nftmax-table__text">${objData.pimpinan ?? "Not set"}</span>
+									    </div>
+									</td>
+
+                                    <td class="nftmax-table__column-1 nftmax-table__data-1">
+										<div class="nftmax-table__amount nftmax-table__text-one">
+											<span class="nftmax-table__text">${objData.nip_pimpinan ?? "Not set"}</span>
 									    </div>
 									</td>
 

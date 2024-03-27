@@ -79,6 +79,7 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::patch('update/{id}', [UnitKerja::class, 'update'])->name('update');
         Route::delete('delete/{id}', [UnitKerja::class, 'destroy'])->name('delete');
     })->name('unit-kerja');
+    
     Route::group(['prefix' => 'jenjangJabatan', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [jenJabatan::class, 'index'])->name('index');
         Route::get('/list', [jenJabatan::class, 'listjenjangJabatan'])->name('list');
