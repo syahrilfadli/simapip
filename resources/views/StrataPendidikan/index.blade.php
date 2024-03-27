@@ -139,7 +139,7 @@
                                 <div class="col-12">
                                     <div class="row nftmax-gap-sq30">
                                         <div id="pegawai-container"></div>
-                                        <div id="pegawai-pagination-container" class="pull-left"></div>
+                                        <div id="pegawai-pagination-container" class="pull-left">{{ $pendidikan->links() }}</div>
                                     </div>
                                 </div>
                             </div>
