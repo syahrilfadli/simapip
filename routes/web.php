@@ -42,6 +42,7 @@ Route::group(['middleware' => ["authenticated"]], function () {
     Route::group(['prefix' => 'jenis-pengawasan', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [JenisPengawasan::class, 'index'])->name('index');
         Route::get('/create', [JenisPengawasan::class, 'create'])->name('create');
+        Route::get('/list', [JenisPengawasan::class, 'list'])->name('list');
         Route::post('/store', [JenisPengawasan::class, 'store'])->name('store');
         Route::get('/edit/{id}', [JenisPengawasan::class, 'edit'])->name('edit');
         Route::patch('update/{id}', [JenisPengawasan::class, 'update'])->name('update');

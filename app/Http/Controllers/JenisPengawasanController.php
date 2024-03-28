@@ -34,12 +34,12 @@ class JenisPengawasanController extends Controller
             'kode' => $request->kode,
             'nama' => $request->nama,
         ]);
-        
+
         // return redirect()->back();
         return Redirect::to('/jenis-pengawasan');
     }
 
- 
+
     public function show(JenisPengawasan $jenisPengawasan)
     {
         //
@@ -72,5 +72,18 @@ class JenisPengawasanController extends Controller
     {
         JenisPengawasan::where('id', $id)->delete();
         return redirect()->back();
+    }
+
+    public function list(Request $request)
+    {
+        $data = JenisPengawasan::query();
+
+        if ($request->pageSize == "all") {
+            return $this->returnJsonSuccess("Userlist retrieved successfully", $data->get());
+        }
+
+        $data = $data->paginate($request->pageSize ?? 1);
+
+        return $this->returnJsonSuccess("Userlist retrieved successfully", $data);
     }
 }
