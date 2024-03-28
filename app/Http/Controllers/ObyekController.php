@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ObyekController extends Controller
 {
-   
+
     public function index()
     {
         // $data = Obyek::all();
@@ -26,24 +26,29 @@ class ObyekController extends Controller
     public function listObyek(Request $request)
     {
         $data = Obyek::where(function ($q) use ($request) {
-                if ($request->has('search') && $request->search != "") {
-                    $q->whereRaw('LOWER(nama) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
-                    $q->orWhereRaw('LOWER(email) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
-                    $q->orWhereRaw('LOWER(kode) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
-                }
-            })
+            if ($request->has('search') && $request->search != "") {
+                $q->whereRaw('LOWER(nama) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
+                $q->orWhereRaw('LOWER(email) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
+                $q->orWhereRaw('LOWER(kode) LIKE ?', ['%' . trim(strtolower($request->search)) . '%']);
+            }
+        })
             ->when($request->has('ja') && $request->ja != "all" && !empty($request->ja), function ($q) use ($request) {
                 if ($request->ja == "NOA") {
                     $q->whereNull('kode');
                 } else
                     $q->where('kode', $request->ja);
-            })
-            ->paginate($request->pageSize);
+            });
+
+        if ($request->pageSize == "all") {
+            return $this->returnJsonSuccess("Userlist retrieved successfully", $data->get());
+        }
+
+        $data = $data->paginate($request->pageSize);
 
         return $this->returnJsonSuccess("Userlist retrieved successfully", $data);
     }
 
-    
+
     public function create()
     {
         return view('obyek.create');
@@ -55,7 +60,7 @@ class ObyekController extends Controller
         $validator = Validator::make($request->all(), [
             'kode' => 'required|string|max:10',
             'nama' => 'required|string|max:100',
-            'alamat' => 'required', 
+            'alamat' => 'required',
             'no_telp' => 'required|min:10|unique:ref_obyek,no_telp',
             'email' => 'required|email|unique:ref_obyek,email',
             'website' => 'required',
@@ -88,16 +93,15 @@ class ObyekController extends Controller
             dd($e->getMessage()); // Menampilkan pesan error pada pengecualian
             return redirect()->back()->with('error', 'Gagal menambahkan data Obyek: ' . $e->getMessage());
         }
-
     }
 
-    
+
     public function show(ObyekController $obyekController)
     {
         //
     }
 
-    
+
     public function edit(Obyek $obyekEdit, $id)
     {
         $obyekEdit = Obyek::find($id);
@@ -138,5 +142,11 @@ class ObyekController extends Controller
         Obyek::where('id', $id)->delete();
 
         return redirect()->back()->with('deleted', 'Berhasil menghapus data!');
+    }
+
+    public function list()
+    {
+        $data = Obyek::all();
+        return $this->returnJsonSuccess("Data retrieved successfully", $data);
     }
 }

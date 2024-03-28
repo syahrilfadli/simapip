@@ -8,6 +8,8 @@
 <script src="{{asset('assets/js/countdown.min.js')}}"></script>
 <script src="{{asset('assets/js/final-countdown.min.js')}}"></script>
 <script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
 <script>
 jQuery(document).ready(function($) {
@@ -18,4 +20,4 @@ jQuery(document).ready(function($) {
 			});
 		});
 });
-</script>	
+</script>
