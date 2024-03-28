@@ -1,0 +1,28 @@
+/* Gaya untuk toast */
+.toastify {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    padding: 5px;
+    z-index: 9999;
+    border-radius: 10px; /* Mengatur sudut yang dibulatkan */
+}
+
+/* Gaya untuk toast sukses */
+.toastify.toastify--success {
+    background-color: #28a745;
+    color: #fff; /* Warna teks putih */
+}
+
+/* Gaya untuk toast kesalahan */
+.toastify.toastify--error {
+    background-color: #dc3545;
+    color: #fff; /* Warna teks putih */
+}
+
+/* Gaya untuk toast default */
+.toastify.toastify--default {
+    background-color: #343a40;
+    color: #fff; /* Warna teks putih */
+}

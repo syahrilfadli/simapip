@@ -13,6 +13,8 @@ use App\Http\Controllers\{
     jenjangJabatanController as jenJabatan,
     jabatanController as jabatan,
     pangkatController as pangkat,
+    SpjRealisasiController,
+    UserController as Users,
 };
 
 /*
@@ -49,6 +51,16 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::delete('delete/{id}', [JenisPengawasan::class, 'destroy'])->name('delete');
     })->name('jenis-pengawasan');
 
+    Route::group(['prefix' => 'realisasi', 'middleware' => ["authenticated"]], function () {
+        Route::get('/', [SpjRealisasiController::class, 'index'])->name('index');
+        Route::get('/selectSt/{id}', [SpjRealisasiController::class, 'getStById'])->name('selectSt');
+        Route::get('/spj/{id}', [SpjRealisasiController::class, 'getSpj'])->name('getSpj');
+        Route::patch('/spj/{id}', [SpjRealisasiController::class, 'postSpj'])->name('postSpj');
+        Route::get('/perencanaan/{id}', [SpjRealisasiController::class, 'showPerencanaan'])->name('showPerencanaan');
+        Route::get('/pelaksanaan/{id}', [SpjRealisasiController::class, 'showPelaksanaan'])->name('showPelaksanaan');
+        Route::get('/penyelesaian/{id}', [SpjRealisasiController::class, 'showPenyelesaian'])->name('showPenyelesaian');
+    })->name('realisasi');
+
     Route::group(['prefix' => 'penugasan', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [PenugasanController::class, 'index'])->name('index');
     })->name('penugasan');
@@ -80,6 +92,7 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::patch('update/{id}', [UnitKerja::class, 'update'])->name('update');
         Route::delete('delete/{id}', [UnitKerja::class, 'destroy'])->name('delete');
     })->name('unit-kerja');
+
     Route::group(['prefix' => 'jenjangJabatan', 'middleware' => ["authenticated"]], function () {
         Route::get('/', [jenJabatan::class, 'index'])->name('index');
         Route::get('/list', [jenJabatan::class, 'listjenjangJabatan'])->name('list');
@@ -108,6 +121,6 @@ Route::group(['middleware' => ["authenticated"]], function () {
         Route::get('/edit/{id}', [pangkat::class, 'edit'])->name('edit');
         Route::patch('/update/{id}', [pangkat::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [pangkat::class, 'destroy'])->name('delete');
-    })->name('obyek');
+    })->name('pangkat');
 
 })->name("simapip");
