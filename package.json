@@ -13,7 +13,7 @@
         "postcss": "^8.1.14",
         "sass": "^1.72.0",
         "scss": "^0.2.4",
-        "vite": "^4.5.2"
+        "vite": "^4.5.3"
     },
     "dependencies": {
         "@ntohq/buefy-next": "^0.1.2",
